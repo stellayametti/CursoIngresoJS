@@ -5,10 +5,70 @@ B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuent
 C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
- ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
+ ”Usted pvar cantidad;
+var descuento;
+var aumento;ago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
 function CalcularPrecio () 
-{
+{	const PRECIO =35;
+ 	var cantidad; 
+ 	var marca;
+ 	var descuento;
+ 	var importeFinal;
+ 	var iibb;
+ 	var precioConDescuento;
+
+ 	cantida = parseInt(document.getElementById('txtIdCantidad').value);
+ 	marca=document.getElementById('Marca').value;
+
+ 	switch (cantidades)
+ 		{
+ 		case 1:
+ 		case 2:
+ 			descuento = 0;
+ 			
+ 			break;
+ 		case 3:
+ 		if (marca == "ArgentinaLuz") {
+ 			descuento = 15;
+ 		}else if (marca == "felipeLamparas") {
+ 			descuento = 10;
+ 		} else{
+ 			descuento = 5;
+ 		}
+ 			break;
+ 			
+ 				case 3: 
+ 		if (marca == "ArgentinaLuz" || marca == "“FelipeLamparas”") {
+ 			descuento = 25;
+ 		}
+ 		else{
+ 			descuento = 20;
+ 		}
+ 			break;
+ 		case 5:
+ 		if (marca == ArgentinaLuz) {
+ 			descuento = 40;
+ 		}else{
+ 				descuento = 30;
+ 			}
+ 		
+ 			break;
+ 		
+ 		default:
+ 		descuento = 50;	
  	
-}
+ 		precioConDescuento = (PRECIO - PRECIO * descuento / 100);
+ 		document.getElementById('txtIdprecioConDescuento').value = precioConDescuento;
+ 		importeFinal = (precioConDescuento * cantidad);
+
+ 		if (importeFinal>120)
+ 		{
+ 			(iibb = importeFinal * 10 / 100);
+ 			//(importeFinal =+ iibb);
+
+ 		alert ("Total : $" + importeFinal + "usted pago :$" + iibb + "de ingresos brutos");
+ 		}else{
+ 			alert( "total : $" + importeFinal );
+ 		}
